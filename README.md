@@ -61,13 +61,6 @@ cache_controller_project.v   — all modules + testbench in one file
 
 ---
 
-## How to Simulate
-
-1. Go to [https://edaplayground.com](https://edaplayground.com)
-2. Paste the contents of `cache_controller_project.v`
-3. Select **Icarus Verilog** as the simulator
-4. Set top module to `cache_tb`
-5. Click Run
 
 **Expected output:**
 ```
@@ -101,10 +94,3 @@ Test 5 | addr=0100 | tag=01 blk=0 | hit=1 miss=0 | Block 0 repeat: HIT expected
 - Datapath and control unit separation
 - Moore FSM design and implementation
 
----
-
-## Background
-
-Built as part of self-study in Computer Organization and Architecture.
-Targeted at understanding how cache hardware actually works at the
-gate level, beyond textbook diagrams.
