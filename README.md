@@ -62,14 +62,15 @@ cache_controller_project.v   — all modules + testbench in one file
 ---
 
 
-**Expected output:**
-```
-Test 1 | addr=1010 | tag=10 blk=1 | hit=0 miss=1 | Cold start: MISS expected
-Test 2 | addr=1010 | tag=10 blk=1 | hit=1 miss=0 | Repeat same addr: HIT expected
-Test 3 | addr=0110 | tag=01 blk=1 | hit=0 miss=1 | Different tag same block: MISS expected
-Test 4 | addr=0100 | tag=01 blk=0 | hit=0 miss=1 | Block 0 cold start: MISS expected
-Test 5 | addr=0100 | tag=01 blk=0 | hit=1 miss=0 | Block 0 repeat: HIT expected
-```
+## Expected Simulation Output
+
+Test | addr | tag | blk | hit | miss | result
+-----|------|-----|-----|-----|------|-------
+  1  | 1010 |  10 |  1  |  0  |   1  | MISS   (cold start)
+  2  | 1010 |  10 |  1  |  1  |   0  | HIT    (same address repeated)
+  3  | 0110 |  01 |  1  |  0  |   1  | MISS   (different tag, same block)
+  4  | 0100 |  01 |  0  |  0  |   1  | MISS   (block 0 cold start)
+  5  | 0100 |  01 |  0  |  1  |   0  | HIT    (same address repeated)
 
 ---
 
